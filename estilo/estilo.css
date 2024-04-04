@@ -28,6 +28,7 @@
     align-items: center;
     position: absolute;
     top: 0;
+    z-index: 2;
 }
 
 .top_header{
@@ -99,6 +100,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: relative;
 }
 
 .video_back{
@@ -152,6 +154,15 @@
     color: var(--preto);
 }
 
+.arrow{
+    position: absolute;
+    bottom: 0px;
+}
+
+.arrow img{
+    height: 100px;
+}
+
 @media (min-aspect-ratio: 16/9){
     .video_back{
         width: 100%;
@@ -163,5 +174,19 @@
     .video_back{
         width: auto;
         height: 100%;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .sub_header .navclass .navlist .nav_item{
+        font-size: 18px;
+    }
+
+    .banner_title h1{
+        font-size: 50px;
+    }
+
+    .banner_title .description{
+        font-size: 20px;
     }
 }
