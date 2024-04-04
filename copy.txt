@@ -1,0 +1,51 @@
+*Página Inicial:*
+
+- *Banner Principal:* Uma imagem de alta qualidade mostrando um caminhão da AN-BR Transportes e Fretes atravessando uma paisagem montanhosa ao pôr do sol, com o logotipo da empresa sobreposta e um slogan como "Junte-se à Nossa Empresa Virtual!"
+
+- *Título Atraente:* "Faça Parte da Nossa Empresa - AN-BR Transportes e Fretes"
+
+- *Breve Descrição:* "Bem-vindo à AN-BR Transportes e Fretes, onde a paixão pela estrada encontra a camaradagem virtual. Explore nossas aventuras, junte-se à nossa comunidade e faça história nas estradas do Euro Truck Simulator 2."
+
+- *Botão de Inscrição:* "Junte-se Agora" - Este botão leva os visitantes diretamente para a página de inscrição da empresa.
+
+*Sobre a AN-BR Transportes e Fretes:*
+
+- *História da Empresa:* "Desde nossas origens modestas como um pequeno grupo de entusiastas de caminhões virtuais, a AN-BR Transportes e Fretes cresceu para se tornar uma das empresas mais respeitadas no Euro Truck Simulator 2. Saiba mais sobre nossa jornada emocionante desde o início até hoje."
+
+- *Valores e Missão:* "Na AN-BR, acreditamos em valores como integridade, trabalho em equipe e respeito mútuo. Nossa missão é proporcionar uma experiência de simulação de caminhões excepcional, onde cada membro se sinta parte de uma comunidade unida e apaixonada."
+
+- *Comunidade:* "Nossa comunidade é o coração e a alma da AN-BR. Veja depoimentos de nossos membros, fotos de nossas caravanas e eventos passados, e descubra o que torna nossa comunidade tão especial."
+
+*Junte-se à Nossa Empresa:*
+
+- *Formulário de Inscrição:* Um formulário simples com campos para nome de usuário no jogo, e-mail e plataforma de jogo, além de uma caixa de texto opcional para comentários adicionais.
+
+- *Benefícios de Membro:* "Ao se juntar à AN-BR Transportes e Fretes, você terá acesso a eventos exclusivos, convites para caravanas organizadas, descontos em mods e muito mais. Venha fazer parte da nossa família virtual hoje!"
+
+*Galeria de Fotos:*
+
+- *Fotos da Empresa:* Uma galeria de imagens coloridas mostrando os caminhões personalizados da AN-BR em ação nas estradas do Euro Truck Simulator 2, com paisagens deslumbrantes ao fundo.
+
+- *Fotos dos Membros:* Uma coleção de fotos enviadas pelos membros da AN-BR, destacando seus caminhões, suas aventuras e os momentos de diversão compartilhados com outros membros da comunidade.
+
+*Exposição de Mods:*
+
+- *Mods Recomendados:* "Explore nossa seleção de mods recomendados para melhorar sua experiência no Euro Truck Simulator 2. De novos caminhões a skins personalizadas, temos tudo o que você precisa para personalizar sua jornada nas estradas virtuais."
+
+*Lista de Membros:*
+
+- *Perfil dos Membros:* Uma lista atualizada dos membros da AN-BR, mostrando seus nomes de usuário no jogo, tempo de associação e conquistas notáveis dentro do jogo.
+
+- *Recrutamento:* "Interessado em se juntar à nossa equipe? Confira nossos requisitos de adesão e saiba como se candidatar para se tornar parte da família AN-BR Transportes e Fretes."
+
+*Contato:*
+
+- *Informações de Contato:* "Para mais informações sobre a AN-BR Transportes e Fretes, entre em contato conosco pelo e-mail contato@anbrtransportes.com ou siga-nos nas redes sociais."
+
+- *Formulário de Contato:* Um formulário simples onde os visitantes podem enviar suas perguntas, sugestões ou solicitações diretamente para a equipe da AN-BR.
+
+*Rodapé:*
+
+- *Links Úteis:* Links para páginas importantes, como política de privacidade, termos de serviço e FAQs, para garantir transparência e confiança aos visitantes do site.
+
+- *Redes Sociais:* Ícones que levam os visitantes para as páginas da empresa nas principais redes sociais, permitindo que eles se conectem e se mantenham atualizados com as últimas notícias e eventos.
