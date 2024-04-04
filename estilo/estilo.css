@@ -63,13 +63,13 @@
 .sub_header{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 50%;
-    padding: 8px 0;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 150px;
 }
 
 .sub_header .logo{
-    height: 40px;
+    height: 60px;
 }
 
 .sub_header .navclass .navlist{
@@ -81,6 +81,7 @@
     font-weight: 500;
     transition: .4s;
     color: var(--branco);
+    font-size: 25px;
 }
 
 .sub_header .navclass .navlist .nav_item:hover{
@@ -88,10 +89,9 @@
 }
 
 .banner{
-    background-image: url(../assets/imagens/banner_animation.mp4);
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; */
     background-color: rgba(0, 0, 0, 0.493);
     background-blend-mode: overlay;
     height: 100vh;
@@ -101,10 +101,17 @@
     width: 100%;
 }
 
+.video_back{
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 .banner_title{
-    max-width: 800px;
+    max-width: 1300px;
     text-align: center;
-    background-color: rgba(134, 134, 134, 0.329);
+    /* background-color: rgba(134, 134, 134, 0.329); */
     padding: 15px;
     border: 1px solid transparent;
     border-radius: 20px;
@@ -112,20 +119,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 1px 2px 5px rgba(2, 5, 179, 0.479);
+    /* box-shadow: 1px 2px 5px rgba(2, 5, 179, 0.479); */
 }
 
 .banner_title h1{
-    font-size: 2.5rem;
+    font-size: 70px;
     color: var(--branco);
     font-weight: 600;
     text-transform: uppercase;
 }
 
 .banner_title .description{
-    max-width: 500px;
+    max-width: 900px;
     margin: auto;
     color: var(--branco);
+    font-size: 25px;
 }
 
 .banner_title .subscription_link{
@@ -142,4 +150,18 @@
 .banner_title .subscription_link:hover{
     background-color: var(--laranja);
     color: var(--preto);
+}
+
+@media (min-aspect-ratio: 16/9){
+    .video_back{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .video_back{
+        width: auto;
+        height: 100%;
+    }
 }
