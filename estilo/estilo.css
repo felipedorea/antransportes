@@ -261,7 +261,42 @@
     max-width: 700px;
     border-radius: 15px;
     height: 465px;
-    box-shadow: 1px 2px 15px rgba(135, 135, 238, 0.452);
+    /* box-shadow: 1px 2px 15px rgba(135, 135, 238, 0.452); */
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.img-cont img:hover{
+    animation: parar 4s ease-in-out;
+}
+
+@keyframes flutuar{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes parar{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(0px);
+    }
+
+
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 .history-text{
