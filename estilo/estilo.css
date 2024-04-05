@@ -186,7 +186,7 @@
 
 .desc-title{
     padding: 0px 0px 3px 0px;
-    font-size: 22px;
+    font-size: 30px;
     text-transform: uppercase;
     position: relative;
     margin-bottom: 10px;
@@ -212,23 +212,25 @@
 
 .valors-cont{
     /* width: 100%; */
-    max-width: 1300px;
+    max-width: 1500px;
     padding: 50px 5px;
     display: flex;
     align-items: start;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 .valors-cont-inv{
     /* width: 100%; */
-    max-width: 1300px;
+    max-width: 1500px;
     padding: 50px 5px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    margin: auto;
 }
 
 .img-cont img{
