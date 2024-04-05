@@ -17,7 +17,10 @@
     text-decoration: none;
     font-family: var(--fonte);
     list-style-type: none;
+    scroll-behavior: smooth;
 }
+
+/* HEADER SECTION */
 
 .header{
     width: 100%;
@@ -162,6 +165,149 @@
 .arrow img{
     height: 100px;
 }
+
+/* VALORS SECTION */
+
+.valors{
+    width: 100%;
+    background-color: var(--branco);
+    min-height: 50vh;
+    padding-bottom: 30px;
+}
+
+.section-title{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px 0px;
+    font-size: 22px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.desc-title{
+    padding: 0px 0px 3px 0px;
+    font-size: 22px;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.desc-title h1:before{
+    content: '';
+    width: 75px;
+    position: absolute;
+    height: 5px;
+    background-color: var(--laranja);
+    bottom: 1px;
+}
+
+.section-title h1:before{
+    content: '';
+    width: 110px;
+    position: absolute;
+    height: 5px;
+    background-color: var(--laranja);
+    bottom: 1px;
+}
+
+.valors-cont{
+    /* width: 100%; */
+    max-width: 1300px;
+    padding: 50px 5px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.valors-cont-inv{
+    /* width: 100%; */
+    max-width: 1300px;
+    padding: 50px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.img-cont img{
+    min-width: 400px;
+    max-width: 700px;
+    border-radius: 15px;
+    height: 465px;
+    box-shadow: 1px 2px 15px rgba(135, 135, 238, 0.452);
+}
+
+.history-text{
+    text-align: center;
+    max-width: 500px;
+    height: 465px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.history-text p{
+    text-indent: 30px;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.division{
+    width: 200px;
+    height: 2px;
+    background-color: #ec430067;
+    margin: auto;
+}
+
+.btn{
+    width: 100%;
+    text-align: center;
+}
+
+.button{
+    background-color: var(--azul);
+    padding: 10px 50px;
+    color: var(--branco);
+    border: 1px solid var(--branco);
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: .5s;
+    width: 500px;
+}
+
+.button:hover{
+    background-color: var(--laranja);
+    color: var(--preto);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-aspect-ratio: 16/9){
     .video_back{
