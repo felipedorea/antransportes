@@ -52,6 +52,14 @@
     font-size: 20px;
 }
 
+.fa-brands, .fa-solid{
+    transition: 0.4s;
+}
+
+.fa-brands:hover, .fa-solid:hover{
+    opacity: 0.3;
+}
+
 .fa-truck{
     color: rgb(0, 238, 255);
 }
@@ -90,6 +98,21 @@
 
 .sub_header .navclass .navlist .nav_item:hover{
     color: var(--laranja);
+}
+
+.recruitment{
+    background-color: var(--laranja);
+    padding: 1px 30px;
+    border-radius: 20px;
+    font-size: 18px !important;
+    box-shadow: 1px 1px 10px #ff480067;
+    display: flex;
+    align-items: center;
+}
+
+.recruitment:hover{
+    color: black !important;
+    transform: scale(1.1);
 }
 
 .banner{
