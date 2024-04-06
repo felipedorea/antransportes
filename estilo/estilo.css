@@ -110,15 +110,13 @@
     align-items: center;
 }
 
+.navclass-mobile{
+    display: none;
+}
+
 .recruitment:hover{
     color: black !important;
     transform: scale(1.1);
-}
-
-.mobile{
-    display: none;
-    font-size: 30px;
-    color: white;
 }
 
 .banner{
@@ -453,3 +451,56 @@
     width: 90%;
     display: block;
 }
+
+.navclass-mobile{
+    display: flex;
+}
+
+.navlist-mobile{
+    position: absolute;
+    display: none;
+    width: 100vw;
+    height: 50vh;
+    background-color: var(--branco);
+    left: 0;
+    top: 110px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+    transition: 3s !important;
+}
+
+.abrir{
+    display: flex;
+}
+
+.nav_item-mobile{
+    font-size: 25px;
+    background-color: var(--azul);
+    color: var(--branco);
+    padding: 10px;
+    width: 100%;
+    display: block;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.recruitment-mobile{
+    background-color: var(--laranja);
+    width: 300px;
+    margin: 0 auto;
+}
+
+.navclass{
+    display: none;
+}
+
+.icone i{
+    font-size: 50px;
+    color: white;
+}
+
+}
+
+

@@ -1,6 +1,7 @@
-// let menu = document.getElementById("navlist-mobile");
-// let barra = document.getElementById("barras").addEventListener("click", abrirMenu);
 
-// function abrirMenu(){
-//     menu.style.display = "flex";
-// };
+
+
+function abrirMenu(){
+    let menuMobile = document.getElementById("mobil");
+    menuMobile.classList.toggle("abrir");
+};
