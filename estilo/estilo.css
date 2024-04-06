@@ -347,6 +347,93 @@
     color: var(--preto);
 }
 
+/* PLAYERS INICIO */
+
+.players{
+    min-height: 50vh;
+    width: 100%;
+}
+
+.players-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: url(../assets/imagens/player.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.397);
+    background-blend-mode: overlay;
+    margin: 20px 0 0 0;
+    padding: 0 30px;
+}
+
+.boss-box, .player-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    padding: 50px 0;
+}
+
+.players-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.boss-img img, .player-img img{
+    max-width: 500px;
+    width: 300px;
+}
+
+.nameBoss, .namePlayer{
+    font-size: 2rem;
+    padding: 10px 0;
+    color: white;
+}
+
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.boss{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boss-desc, .player-desc{
+    text-align: justify;
+    font-weight: 500;
+    text-indent: 30px;
+    background-color: rgba(58, 192, 245, 0.075);
+    padding: 15px;
+    border-radius: 15px;
+    height: 300px;
+}
+
+.boss-desc p, .player-desc p{
+    transition: 1s ease-in;
+    color: white;
+}
+
+.cargo{
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
 
 
 
