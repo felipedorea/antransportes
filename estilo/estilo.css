@@ -399,6 +399,16 @@
     .banner_title .description{
         font-size: 20px;
     }
+
+    .history-text {
+        text-align: center;
+        max-width: 100%; 
+        height: 100%;
+    }
+
+    .sub_header {
+        padding: 8px 20px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -434,6 +444,7 @@
     .img-cont img{
         width: 100%;
         height: 300px;
+        min-width: 0;
     }
 
     .history-text{
@@ -502,6 +513,46 @@
     color: white;
 }
 
+}
+
+@media screen and (max-width: 400px){
+    .banner_title h1 {
+        font-size: 34px;
+    }
+
+    .banner_title .description {
+        font-size: 17px;
+    }
+
+    .icone i {
+        font-size: 35px;
+    }
+
+    .sub_header .logo {
+        height: 50px;
+    }
+
+    .history-text p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 300px){
+.banner_title h1 {
+    font-size: 25px;
+}
+
+.banner_title .description {
+    font-size: 14px;
+}
+
+.nav_item-mobile {
+    font-size: 15px;
+}
+
+.recruitment-mobile {
+    width: 80%;
+}
 }
 
 
