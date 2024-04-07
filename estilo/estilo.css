@@ -476,6 +476,10 @@
 
 @media screen and (min-width: 3840px){
 
+    .nav_logos .nav_items {
+        font-size: 50px;
+    }
+
     .sub_header .logo {
         height: 200px;
     }
@@ -508,6 +512,36 @@
 
     .arrow img {
         height: 300px;
+    }
+
+    .section-title {
+        font-size: 55px;
+    }
+
+    .img-cont img {
+        min-width: 1000px;
+        height: 800px;
+    }
+
+    .valors-cont, .valors-cont-inv{
+        max-width: 2600px;
+    }
+
+    .desc-title{
+        font-size: 50px;
+    }
+
+    .history-text {
+        max-width: 1200px;
+        height: 100%;
+    }
+
+    .history-text p{
+        font-size: 35px;
+    }
+
+    .button{
+        font-size: 50px;
     }
 }
 
