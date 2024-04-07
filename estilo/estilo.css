@@ -474,6 +474,43 @@
     }
 }
 
+@media screen and (min-width: 3840px){
+
+    .sub_header .logo {
+        height: 200px;
+    }
+
+    .sub_header .navclass .navlist .nav_item{
+        font-size: 70px;
+    }
+
+    .recruitment{
+        font-size: 70px!important;
+    }
+
+
+    .banner_title {
+        max-width: 100%;
+    }
+
+    .banner_title h1 {
+        font-size: 135px;
+    }
+
+    .banner_title .description {
+        max-width: 1800px;
+        font-size: 50px;
+    }
+
+    .banner_title .subscription_link{
+        font-size: 50px;
+    }
+
+    .arrow img {
+        height: 300px;
+    }
+}
+
 @media screen and (max-width: 1400px){
     .sub_header .navclass .navlist .nav_item{
         font-size: 18px;
