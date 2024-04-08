@@ -408,9 +408,9 @@
 
 .boss{
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .boss-desc, .player-desc{
