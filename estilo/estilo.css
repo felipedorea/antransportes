@@ -436,6 +436,88 @@
     text-align: center;
 }
 
+/* DISCORD */
+
+.discord{
+    width: 100%;
+    padding: 30px 0;
+    background-color: var(--preto);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 30vh;
+}
+
+picture{
+    display: flex;
+    flex-direction: column;
+}
+
+.discord .img-discord img{
+    width: 300px;
+}
+
+.disc-title{
+    max-width: 600px;
+}
+
+.disc-title h1{
+    font-size: 40px;
+    color: white;
+}
+
+.disc-title h1:before{
+    content: '| ';
+    color: var(--laranja);
+}
+
+.disc-title p{
+    font-size: 15px;
+    text-align: justify;
+    text-indent: 30px;
+    color: var(--branco);
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.disc-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.disc-title a{
+    font-size: 18px;
+    background-color: var(--azul);
+    color: white;
+    padding: 5px 10px;
+    /* margin-top: 10px; */
+    width: fit-content;
+    border-radius: 15px;
+}
+
+.disc-link .click{
+    color: white;
+    font-size: 30px;
+    animation: slide 1s infinite;
+}
+
+@keyframes slide {
+    0%{
+        transform: translateX(0px);
+    }
+
+    50%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+
+
 
 
 
