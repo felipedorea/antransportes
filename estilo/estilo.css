@@ -420,7 +420,7 @@
     background-color: var(--branco);
     padding: 15px;
     border-radius: 15px;
-    min-height: 400px;
+    min-height: 315px;
 }
 
 .boss-desc p, .player-desc p{
