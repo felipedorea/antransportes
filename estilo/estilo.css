@@ -347,6 +347,93 @@
     color: var(--preto);
 }
 
+/* PLAYERS INICIO */
+
+.players{
+    min-height: 50vh;
+    width: 100%;
+}
+
+.players-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: url(../assets/imagens/player.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.397);
+    background-blend-mode: overlay;
+    margin: 20px 0 0 0;
+    padding: 0 30px;
+}
+
+.boss-box, .player-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    padding: 50px 0;
+}
+
+.players-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.boss-img img, .player-img img{
+    max-width: 500px;
+    width: 300px;
+}
+
+.nameBoss, .namePlayer{
+    font-size: 2rem;
+    padding: 10px 0;
+    color: white;
+}
+
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.boss{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boss-desc, .player-desc{
+    text-align: justify;
+    font-weight: 500;
+    text-indent: 30px;
+    background-color: rgba(58, 192, 245, 0.075);
+    padding: 15px;
+    border-radius: 15px;
+    height: 300px;
+}
+
+.boss-desc p, .player-desc p{
+    transition: 1s ease-in;
+    color: white;
+}
+
+.cargo{
+    text-transform: uppercase;
+    color: var(--laranja);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
 
 
 
@@ -387,6 +474,77 @@
     }
 }
 
+@media screen and (min-width: 3840px){
+
+    .nav_logos .nav_items {
+        font-size: 50px;
+    }
+
+    .sub_header .logo {
+        height: 200px;
+    }
+
+    .sub_header .navclass .navlist .nav_item{
+        font-size: 70px;
+    }
+
+    .recruitment{
+        font-size: 70px!important;
+    }
+
+
+    .banner_title {
+        max-width: 100%;
+    }
+
+    .banner_title h1 {
+        font-size: 135px;
+    }
+
+    .banner_title .description {
+        max-width: 1800px;
+        font-size: 50px;
+    }
+
+    .banner_title .subscription_link{
+        font-size: 50px;
+    }
+
+    .arrow img {
+        height: 300px;
+    }
+
+    .section-title {
+        font-size: 55px;
+    }
+
+    .img-cont img {
+        min-width: 1000px;
+        height: 800px;
+    }
+
+    .valors-cont, .valors-cont-inv{
+        max-width: 2600px;
+    }
+
+    .desc-title{
+        font-size: 50px;
+    }
+
+    .history-text {
+        max-width: 1200px;
+        height: 100%;
+    }
+
+    .history-text p{
+        font-size: 35px;
+    }
+
+    .button{
+        font-size: 50px;
+    }
+}
+
 @media screen and (max-width: 1400px){
     .sub_header .navclass .navlist .nav_item{
         font-size: 18px;
@@ -398,6 +556,16 @@
 
     .banner_title .description{
         font-size: 20px;
+    }
+
+    .history-text {
+        text-align: center;
+        max-width: 100%; 
+        height: 100%;
+    }
+
+    .sub_header {
+        padding: 8px 20px;
     }
 }
 
@@ -434,6 +602,7 @@
     .img-cont img{
         width: 100%;
         height: 300px;
+        min-width: 0;
     }
 
     .history-text{
@@ -458,21 +627,22 @@
 
 .navlist-mobile{
     position: absolute;
-    display: none;
-    width: 100vw;
+    display: flex;
+    width: 100%;
+    background-color: #ffffffc5;
+    left: -100%;
     height: 50vh;
-    background-color: var(--branco);
-    left: 0;
     top: 110px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
-    transition: 3s !important;
+    transition: 1s !important;
+    border-bottom-right-radius: 30%;
 }
 
 .abrir{
-    display: flex;
+    left: 0;
 }
 
 .nav_item-mobile{
@@ -501,6 +671,46 @@
     color: white;
 }
 
+}
+
+@media screen and (max-width: 400px){
+    .banner_title h1 {
+        font-size: 34px;
+    }
+
+    .banner_title .description {
+        font-size: 17px;
+    }
+
+    .icone i {
+        font-size: 35px;
+    }
+
+    .sub_header .logo {
+        height: 50px;
+    }
+
+    .history-text p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 300px){
+.banner_title h1 {
+    font-size: 25px;
+}
+
+.banner_title .description {
+    font-size: 14px;
+}
+
+.nav_item-mobile {
+    font-size: 15px;
+}
+
+.recruitment-mobile {
+    width: 80%;
+}
 }
 
 
