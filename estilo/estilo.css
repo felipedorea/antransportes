@@ -542,6 +542,53 @@
     }
 }
 
+.donation{
+    /* min-height: 25vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--branco);
+    padding: 15px 0;
+    flex-wrap: wrap;
+}
+
+.donation img{
+    max-width: 100px;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.donation-msg{
+    max-width: 700px;
+}
+
+.donation-msg h1{
+    font-size: 30px;
+}
+
+.orange{
+    color: var(--laranja);
+}
+
+.effect-msg{
+    font-size: 14px;
+    font-weight: 500;
+    text-indent: 30px;
+}
+
 
 
 
@@ -699,6 +746,16 @@
 
     .sub_header {
         padding: 8px 20px;
+    }
+
+    .donation{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    
+    .donation-msg h1, .effect-msg{
+        text-align: center;
+        text-indent: 0;
     }
 }
 
