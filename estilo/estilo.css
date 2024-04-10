@@ -542,8 +542,7 @@
     }
 }
 
-.donation{
-    /* min-height: 25vh; */
+.donation, .whatsapp{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -575,7 +574,7 @@
     max-width: 700px;
 }
 
-.donation-msg h1{
+.donation-msg h1, .zap-msg h1{
     font-size: 30px;
 }
 
@@ -583,10 +582,70 @@
     color: var(--laranja);
 }
 
-.effect-msg{
+.effect-msg, .zap-msg p{
     font-size: 14px;
     font-weight: 500;
     text-indent: 30px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    background-image: url(../assets/imagens/img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 50vh !important;
+    background-color: rgba(0, 0, 0, 0.562);
+    background-blend-mode: overlay;
+}
+
+.zap-msg{
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(173, 216, 230, 0.212);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.137);
+    color: var(--branco);
+    text-shadow: 1px 2px 3px black;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.zap-msg p{
+    text-indent: 0;
+    margin-bottom: 10px;
+}
+
+.zap-msg a{
+    display: block;
+    background-color: rgb(4, 177, 4);
+    width: 50%;
+    padding: 5px;
+    border-radius: 15px;
+    color: black;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.137);
+    margin: 0 auto;
+    transition: .2s;
+    text-shadow: none;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.342);
+}
+
+.zap-msg a:hover{
+    background-color: rgb(5, 151, 5);
+}
+
+.whatsapp img{
+    max-width: 200px;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.green{
+    color: rgb(4, 177, 4);
 }
 
 
