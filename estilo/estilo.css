@@ -648,6 +648,76 @@
     color: rgb(4, 177, 4);
 }
 
+/* FOOTER */
+
+.footer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--preto);
+    padding: 30px 0 0 0;
+    text-align: center;
+}
+
+.infor{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.infor .img img{
+    max-width: 200px;
+}
+
+.foot-info{
+    color: var(--branco);
+}
+
+.foot-info h1{
+    font-size: 25px;
+}
+
+.foot-info ul li a{
+    color: white;
+    transition: .2s;
+}
+
+.foot-info ul li a:hover{
+    color: var(--laranja);
+}
+
+.foot-info ul li a:before, .foot-info ul li a:after, .foot-info h1:before, .foot-info h1:after{
+    content: ' | ';
+    color: var(--laranja);
+    font-weight: bolder;
+}
+
+.foot-end{
+    background-color: var(--laranja);
+    font-size: 12px;
+}
+
+.politcs p a{
+    color: var(--branco);
+}
+
+.foot-end-links{
+    color: var(--branco);
+    font-weight: 500;
+}
+
+/* PRIVACY */
+
+.privacy{
+    width: 100%;
+    padding: 20px;
+}
+
+.privacy h2{
+    text-align: center;
+}
+
 
 
 
@@ -944,6 +1014,15 @@
 
 .zap-msg a{
     width: 100%;
+}
+
+.infor{
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.foot-end{
+    padding: 0 10px;
 }
 
 }
