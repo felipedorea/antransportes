@@ -446,9 +446,10 @@
     align-items: center;
     justify-content: space-evenly;
     min-height: 30vh;
+    flex-wrap: wrap;
 }
 
-picture{
+.img-discord{
     display: flex;
     flex-direction: column;
 }
@@ -491,29 +492,101 @@ picture{
     background-color: var(--azul);
     color: white;
     padding: 5px 10px;
-    /* margin-top: 10px; */
     width: fit-content;
     border-radius: 15px;
+    transition: .4s;
+    animation: color 2s infinite;
+    box-shadow: 2px 2px 5px #ffffff25;
+}
+
+.disc-title a:hover{
+    transform: scale(1.05);
+    background-color: var(--laranja);
 }
 
 .disc-link .click{
     color: white;
     font-size: 30px;
     animation: slide 1s infinite;
+    font-weight: bold;
 }
 
 @keyframes slide {
     0%{
         transform: translateX(0px);
+        color: var(--laranja);
     }
 
     50%{
-        transform: translateX(10px);
+        transform: translateX(8px);
+        color: var(--laranja);
     }
 
     100%{
         transform: translateX(0px);
+        color: var(--branco);
     }
+}
+
+@keyframes color {
+    0%{
+        background-color: var(--azul);
+    }
+
+    50%{
+        background-color: var(--laranja);
+    }
+
+    100%{
+        background-color: var(--azul);
+    }
+}
+
+.donation{
+    /* min-height: 25vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--branco);
+    padding: 15px 0;
+    flex-wrap: wrap;
+}
+
+.donation img{
+    max-width: 100px;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.donation-msg{
+    max-width: 700px;
+}
+
+.donation-msg h1{
+    font-size: 30px;
+}
+
+.orange{
+    color: var(--laranja);
+}
+
+.effect-msg{
+    font-size: 14px;
+    font-weight: 500;
+    text-indent: 30px;
 }
 
 
@@ -626,6 +699,30 @@ picture{
     .button{
         font-size: 50px;
     }
+
+    .discord .img-discord img{
+        width: 800px;
+    }
+
+    .disc-title{
+        max-width: 1500px;
+    }
+
+    .disc-title h1{
+        font-size: 70px;
+    }
+
+    .disc-title p{
+        font-size: 35px;
+    }
+
+    .disc-title a{
+        font-size: 50px;
+    }
+
+    .disc-link .click{
+        font-size: 65px;
+    }
 }
 
 @media screen and (max-width: 1400px){
@@ -649,6 +746,16 @@ picture{
 
     .sub_header {
         padding: 8px 20px;
+    }
+
+    .donation{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    
+    .donation-msg h1, .effect-msg{
+        text-align: center;
+        text-indent: 0;
     }
 }
 
@@ -758,6 +865,24 @@ picture{
     padding: 30px 0;
 }
 
+.discord{
+    gap: 20px;
+}
+
+.disc-title h1{
+    text-align: center;
+}
+
+.disc-title p{
+    text-align: center;
+    text-indent: 0;
+    padding: 0 10px;
+}
+
+.disc-link{
+    justify-content: center;
+}
+
 }
 
 @media screen and (max-width: 400px){
@@ -797,6 +922,14 @@ picture{
 
 .recruitment-mobile {
     width: 80%;
+}
+
+.discord .img-discord img{
+    width: 250px;
+}
+
+.disc-title h1{
+    font-size: 34px;
 }
 }
 
