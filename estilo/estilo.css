@@ -20,6 +20,26 @@
     scroll-behavior: smooth;
 }
 
+.arrow-up{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 25px;
+    background-color: var(--laranja);
+    color: white;
+    padding: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.arrow_up{
+    display: flex;
+}
+
 /* HEADER SECTION */
 
 .header{
