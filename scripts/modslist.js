@@ -1,3 +1,5 @@
+
+
 const modsList = [
     {
         id: 1,
@@ -48,4 +50,16 @@ const modsList = [
     }
 ]
 
-console.log(modsList);
+
+let div = document.getElementById("Div")
+
+const showHtml = modsList.map((mod, index) => {
+
+    return `
+    <h1>${mod.id}</h1>
+    `
+})
+
+div.innerHTML = showHtml
+
+
