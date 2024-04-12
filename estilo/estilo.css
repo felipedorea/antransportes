@@ -20,6 +20,22 @@
     scroll-behavior: smooth;
 }
 
+::selection {
+    color: var(--branco);
+    background: var(--laranja);
+  }
+
+  html ::-webkit-scrollbar {
+    width: 8px;
+  }
+  html ::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: var(--laranja);
+  }
+  html ::-webkit-scrollbar-track {
+    background: var(--branco);
+  }
+
 .arrow-up{
     position: fixed;
     bottom: 30px;
