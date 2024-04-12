@@ -29,5 +29,23 @@ const modsList = [
         name: "Mod 4",
         categorie: "Caminhões",
         description: "Descrição do mod",
+    },
+
+    {
+        id: 5,
+        img: "../assets/imagens/imgmod",
+        name: "Mod 5",
+        categorie: "Caminhões",
+        description: "Descrição do mod",
+    },
+
+    {
+        id: 6,
+        img: "../assets/imagens/imgmod",
+        name: "Mod 6",
+        categorie: "Caminhões",
+        description: "Descrição do mod",
     }
 ]
+
+console.log(modsList);
