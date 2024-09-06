@@ -783,7 +783,7 @@
     text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.356);
 }
 
-.modslist{
+.faq-section, .rec-section{
     min-height: 50vh;
     display: flex;
     align-items: center;
