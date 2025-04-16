@@ -6,6 +6,7 @@
     --fonte: "Poppins", sans-serif;
     --branco: whitesmoke;
     --preto: black;
+    --preto50: rgba(0, 0, 0, 0.377);
     --azul: #010087;
     --laranja: #ec4400;
 }
@@ -118,10 +119,11 @@
     justify-content: space-between;
     width: 100%;
     padding: 8px 150px;
+    max-height: 50px;
 }
 
 .sub_header .logo{
-    height: 60px;
+    max-height: 45px;
 }
 
 .sub_header .navclass .navlist{
@@ -133,7 +135,7 @@
     font-weight: 500;
     transition: .4s;
     color: var(--branco);
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .sub_header .navclass .navlist .nav_item:hover{
@@ -143,7 +145,7 @@
 .sticky{
     position: fixed;
     top: 0;
-    background-color: var(--preto);
+    background-color: var(--preto50);
 }
 
 .recruitment{
@@ -784,7 +786,7 @@
 
 .banner-standard{
     min-height: 30vh;
-    background-image: url(../assets/imagens/banner-std.png);
+    background-image: url(../assets/imagens/banner-std.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
