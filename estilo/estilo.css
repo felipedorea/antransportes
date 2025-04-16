@@ -647,6 +647,11 @@
     color: var(--laranja);
 }
 
+.azul{
+    color: var(--azul);
+    font-weight: 500;
+}
+
 .effect-msg, .zap-msg p{
     font-size: 14px;
     font-weight: 500;
