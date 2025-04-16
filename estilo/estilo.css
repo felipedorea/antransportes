@@ -811,7 +811,7 @@
     text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.356);
 }
 
-.faq-section, .rec-section{
+.faq-section, .rec-section, .route-section{
     min-height: 50vh;
     display: flex;
     align-items: center;
