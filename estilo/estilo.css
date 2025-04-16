@@ -93,7 +93,11 @@
 }
 
 .fa-brands:hover, .fa-solid:hover{
-    opacity: 0.3;
+    opacity: 0.8;
+}
+
+.fa-plane{
+    color: rgb(148, 5, 148);
 }
 
 .fa-truck{
@@ -402,7 +406,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-image: url(../assets/imagens/player.png);
+    background-image: url(../assets/imagens/player.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -413,13 +417,21 @@
     padding: 0 30px;
 }
 
+.boss, .players-box {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1300px;
+}
+
 .boss-box, .player-box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    max-width: 600px;
+    justify-content: space-around;
+    width: 100%;
     padding: 7px 0;
+    flex-wrap: wrap;
 }
 
 .players-box{
@@ -428,6 +440,12 @@
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+}
+
+.boss-img, .player-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .boss-img img, .player-img img{
@@ -439,6 +457,9 @@
     font-size: 2rem;
     padding: 10px 0;
     color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .redes{
@@ -462,7 +483,7 @@
     background-color: var(--branco);
     padding: 15px;
     border-radius: 15px;
-    min-height: 315px;
+    max-width: 700px;
 }
 
 .boss-desc p, .player-desc p{
@@ -633,7 +654,7 @@
 /* WHATSAPP */
 
 .whatsapp{
-    background-image: url(../assets/imagens/img.png);
+    background-image: url(../assets/imagens/img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -942,7 +963,7 @@
 
     .history-text {
         text-align: center;
-        max-width: 100%; 
+        max-width: 600px; 
         height: 100%;
     }
 
@@ -958,6 +979,10 @@
     .donation-msg h1, .effect-msg{
         text-align: center;
         text-indent: 0;
+    }
+
+    .valors-cont, .valors-cont-inv{
+        flex-wrap: nowrap;
     }
 }
 
