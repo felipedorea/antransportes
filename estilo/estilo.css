@@ -1276,6 +1276,10 @@
     padding: 0 10px;
 }
 
+.rec-section{
+    padding: 10px 11px 10px 7px;
+}
+
 .rec-section h1{
     padding: 20px 0px 0px 0px;
 }
@@ -1287,6 +1291,10 @@
 .steps, .rec-section .container-rec .list-steps .steps p{
     text-align: center;
     text-indent: 0px;
+}
+
+.rec-section .container-rec .list-steps .steps{
+    list-style-type: none !important;
 }
 
 .obs{
