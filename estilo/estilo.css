@@ -811,13 +811,85 @@
     text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.356);
 }
 
-.faq-section, .rec-section, .route-section{
+.faq-section, .rec-section, .extra-section{
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
 }
+
+.extra-section{
+    font-size: 16px;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+}
+
+.extra-section .apps, .extra-section .liveries{
+    text-align: center;
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.extra-section .apps::before{
+    content: 'Faça aqui o download de addon-s';
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--azul);
+    bottom: -51.8px;
+    position: relative;
+}
+
+.extra-section .liveries::before{
+    content: 'Faça aqui o download de liveries';
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--azul);
+    bottom: -51.8px;
+    position: relative;
+}
+
+.extra-section .table{
+    margin: 10px;
+    padding: 10px;
+    width: 1200px;
+    text-align: center;
+    border: 1px solid black;
+    height: 100px;
+}
+
+.extra-section .table .table-head{
+    background-color: var(--azul);
+    color: white;
+    font-size: 18px;
+}
+
+.extra-section .table .table-row{
+    background-color: rgba(128, 128, 128, 0.507);
+    color: black;
+    font-size: 18px;
+    font-size: 15px;
+}
+
+.extra-section .table .table-row .table-content a{
+    color: var(--laranja);
+    font-weight: 500;
+}
+
+.extra-section .table .table-row .table-content-2 a{
+    color: var(--laranja);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.extra-section .table .table-row .table-content a:hover{
+    color: var(--azul);
+}
+
 
 
 
