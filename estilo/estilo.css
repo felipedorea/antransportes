@@ -955,6 +955,53 @@
     color: var(--laranja);
 }
 
+.faq-section{
+    display: block;
+    padding-bottom: 50px;
+}
+
+.faq-section .faq-title{
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.faq-section .accordion{
+    max-width: 1200px;
+    background-color: orange;
+    padding: 15px 15px 10px 15px;
+    margin-left: 30px;
+    border: 2px solid black; 
+}
+
+.faq-section .accordion .accordion_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+}
+
+.faq-section .accordion .accordion_container .accordion_content{
+    text-align: justify;
+    display: none;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px dotted lightgray;
+    
+}
+
+.active{
+    display: block !important;
+    transition: display 2s ease;
+}
+
+.chevron{
+    transform: rotateX(180deg);
+    transition: all .5s;
+}
 
 
 
@@ -1299,6 +1346,15 @@
 
 .obs{
     text-align: center !important;
+}
+
+.faq-section .accordion{
+    margin-left: 0px;
+    width: 100%;
+}
+
+.faq-section .accordion_content p{
+    text-align: justify;
 }
 
 }
