@@ -855,6 +855,24 @@
     position: relative;
 }
 
+.extra-section .apps, .extra-section .rotas{
+    text-align: center;
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.extra-section .rotas::before{
+    content: 'Veja todas as nossas rotas oficiais';
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--azul);
+    bottom: -51.8px;
+    position: relative;
+}
+
 .extra-section .table{
     margin: 10px;
     padding: 10px;
