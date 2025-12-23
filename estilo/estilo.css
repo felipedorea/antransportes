@@ -124,7 +124,7 @@
 }
 
 .sub_header .logo{
-    max-height: 45px;
+    max-height: 150px;
 }
 
 .sub_header .navclass .navlist{
@@ -999,6 +999,7 @@
     padding: 15px;
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    font-size: 11px;
 }
 
 .faq-section .accordion .accordion_container .accordion_content{
