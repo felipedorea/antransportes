@@ -9,6 +9,7 @@
     --preto50: rgba(0, 0, 0, 0.377);
     --azul: #010087;
     --laranja: #ec4400;
+    --link_off: rgba(128, 128, 128, 0.712);
 }
 
 *{
@@ -837,23 +838,23 @@
     align-items: center;
 }
 
-.extra-section .apps::before{
+/* .extra-section .apps::before{
     content: 'Faça aqui o download de addon-s';
     font-weight: 400;
     font-size: 15px;
     color: var(--azul);
     bottom: -51.8px;
     position: relative;
-}
+} */
 
-.extra-section .liveries::before{
+/* .extra-section .liveries::before{
     content: 'Faça aqui o download de liveries';
     font-weight: 400;
     font-size: 15px;
     color: var(--azul);
     bottom: -51.8px;
     position: relative;
-}
+} */
 
 .extra-section .apps, .extra-section .rotas{
     text-align: center;
@@ -864,19 +865,19 @@
     align-items: center;
 }
 
-.extra-section .rotas::before{
+/* .extra-section .rotas::before{
     content: 'Veja todas as nossas rotas oficiais';
     font-weight: 400;
     font-size: 15px;
     color: var(--azul);
     bottom: -51.8px;
     position: relative;
-}
+} */
 
 .extra-section .table{
     margin: 10px;
     padding: 10px;
-    width: 1200px;
+    width: 1000px;
     text-align: center;
     border: 1px solid black;
     height: 100px;
@@ -901,7 +902,7 @@
 }
 
 .extra-section .table .table-row .table-content-2 a{
-    color: var(--laranja);
+    color: var(--link_off);
     font-weight: 500;
     pointer-events: none;
 }
