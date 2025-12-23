@@ -793,10 +793,12 @@
 
 .banner-standard{
     min-height: 30vh;
+    background: rgba(0, 0, 0, 0.623);
     background-image: url(../assets/imagens/banner-std.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-blend-mode: multiply;
     color: var(--branco);
     display: flex;
     align-items: center;
@@ -805,7 +807,14 @@
 
 .banner-std{
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-std p{
+    font-size: 1.2rem;
 }
 
 .banner-std h1{
@@ -875,7 +884,8 @@
 } */
 
 .extra-section .table{
-    margin: 10px;
+    margin: auto;
+    margin-bottom: 10px;
     padding: 10px;
     width: 1000px;
     text-align: center;
@@ -1206,6 +1216,21 @@
     
 }
 
+@media screen and (max-width: 1050px){
+    .extra-section .table {
+        width: 100%;
+        margin: 0;
+    }
+    
+}
+
+@media screen and (max-width: 780px){
+    .extra-section .table .table-head, .extra-section .table .table-row {
+        font-size: 12px;
+    }
+    
+}
+
 @media screen and (max-width: 600px){
 
     .top_header{
@@ -1376,6 +1401,10 @@
 .faq-section .accordion_content p{
     text-align: justify;
 }
+
+.extra-section .table .table-head, .extra-section .table .table-row {
+        font-size: 10px;
+    }
 
 }
 
