@@ -874,6 +874,11 @@
     align-items: center;
 }
 
+.extra-section .rotas .subtitle{
+    color: rgb(255, 0, 0);
+    font-size: 12px;
+}
+
 /* .extra-section .rotas::before{
     content: 'Veja todas as nossas rotas oficiais';
     font-weight: 400;
@@ -907,11 +912,12 @@
 }
 
 .extra-section .table .table-row .table-content a{
-    color: var(--laranja);
+    color: rgb(1, 95, 1);
     font-weight: 500;
+    /* text-shadow: 1px 2px 0px rgba(189, 113, 0, 0.582); */
 }
 
-.extra-section .table .table-row .table-content-2 a{
+.extra-section .table .table-row .table-content-2 a, .extra-section .table .table-row .table-content-2{
     color: var(--link_off);
     font-weight: 500;
     pointer-events: none;
