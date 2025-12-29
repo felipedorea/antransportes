@@ -1041,7 +1041,7 @@
 }
 
 .form{
-    width: 500px;
+    width: 70%;
     max-width: 100%;
     /* height: 500px; */
     display: flex;
@@ -1068,6 +1068,7 @@
 
 .form .title_form p{
     color: red;
+    text-align: center;
 }
 
 .form .title_form h1{
@@ -1096,23 +1097,57 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
+    width: 45%;
 }
 
-.form input, select{
+.form input{
     width: 100%;
     border-radius: 5px;
     background-color: rgb(199, 198, 198);
     padding: 2px 5px;
     border: none;
     outline: none;
+    font-size: 14px;
 }
 
-.form .inputs_form{
+.form .selects{
+    width: 100%;
     display: flex;
-    gap: 5px;
-    font-size: 0.7rem;
-    font-weight: 500;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.form select{
+    width: fit-content;
+    border-radius: 5px;
+    background-color: rgb(199, 198, 198);
+    padding: 2px 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.form .textbox_form{
+    color: black;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form .textbox_form textarea{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background-color: rgb(199, 198, 198);
+    border-radius: 5px;
+    border-color: rgb(199, 198, 198);
+    padding: 5px;
+    height: 150px;
+    font-size: 14px;
 }
 
 .form button{
@@ -1505,6 +1540,12 @@
 .extra-section .table .table-head, .extra-section .table .table-row {
         font-size: 10px;
     }
+
+
+
+.form form, .form{
+    width: 100%;
+}
 
 .form .container_form{
     flex-wrap: wrap;
