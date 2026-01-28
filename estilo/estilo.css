@@ -327,14 +327,6 @@
 
 @keyframes flutuar{
 
-/* from {
-    transform: translateX(-300%);
-  }
-  to {
-    transform: translateX(300%);
-  }
-} */
-
     0%{
     transform: translateY(0px);
 }
@@ -436,16 +428,39 @@
 
 .players-container .pilot-img {
     display: flex;
-    flex-wrap: wrap;
-    /* gap: 5px; */
+    gap: 10px;
+    flex-wrap: wrap; 
     max-width: 100%;
     /* margin: auto; */
-    justify-content: space-evenly;
+    justify-content: center;
+    /* animation: carousel 25s linear infinite; */
 }
 
 .players-container .pilot-img img {
     max-width: 800px;
 }
+
+/* .players-container .pilot-img:hover{
+    animation: stopcarousel 25s;
+}
+
+@keyframes carousel {
+    from {
+    transform: translateX(-2%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes stopcarousel {
+    from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+} */
 
 .redes{
     display: flex;
@@ -1448,7 +1463,7 @@
 
 .recruitment-mobile{
     background-color: var(--laranja);
-    width: 300px;
+    /* width: 300px; */
     margin: 0 auto;
 }
 
