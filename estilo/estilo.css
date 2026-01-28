@@ -424,6 +424,8 @@
     /* display: flex;
     flex-wrap: wrap; */
     margin: auto;
+    background-color: #aaaaaa;
+    padding: 10px 0px;
 }
 
 .players-container .pilot-img {
