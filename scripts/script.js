@@ -1,4 +1,5 @@
 window.onscroll = function() {headerChanger(), up()};
+document.getElementById("year").textContent = new Date().getFullYear();
 
 let Header = document.getElementById("sub-header");
 let sticky = Header.offsetTop;
@@ -56,5 +57,8 @@ let accordion5 = document.getElementById("title5").addEventListener("click", () 
   document.getElementById("chevron5").classList.toggle("chevron");
   document.getElementById("content5").classList.toggle("active");
 })
+
+
+
 
 
