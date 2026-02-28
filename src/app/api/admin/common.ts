@@ -7,7 +7,7 @@ async function handleList(model: any) {
     try {
         const session = await getSession();
         if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        const items = await prisma[model].findMany({ orderBy: { criado_em: "desc" } });
+        const items = await (prisma as any)[model].findMany({ orderBy: { criado_em: "desc" } });
         return NextResponse.json(items);
     } catch (error) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
