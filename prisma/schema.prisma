@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  nome         String
+  email        String   @unique
+  senha_hash   String
+  foto_url     String?
+  nivel_acesso String?  @default("admin")
+  criado_em    DateTime @default(now())
+
+  @@map("usuarios_admin")
+}
+
+model Route {
+  id             String   @id @default(uuid())
+  numero_voo     String
+  origem         String
+  destino        String
+  distancia_nm   Int
+  duracao_media  String
+  aeronave       String
+  simbrief_link  String?
+  ativo          Boolean  @default(true)
+  criado_em      DateTime @default(now())
+
+  @@map("rotas")
+}
+
+model Pilot {
+  id         String   @id @default(uuid())
+  nome       String
+  cargo      String
+  descricao  String?
+  foto_url   String?
+  biografia  String?
+  ativo      Boolean  @default(true)
+  criado_em  DateTime @default(now())
+
+  @@map("pilotos")
+}
+
+model Livery {
+  id               String   @id @default(uuid())
+  nome             String
+  aeronave         String
+  descricao        String?
+  pintura_url      String?
+  download_url     String
+  ativo            Boolean  @default(true)
+  criado_em        DateTime @default(now())
+
+  @@map("liveries")
+}
+
+model Mod {
+  id            String   @id @default(uuid())
+  nome          String
+  descricao     String?
+  versao        String?
+  download_url  String
+  ativo         Boolean  @default(true)
+  criado_em     DateTime @default(now())
+
+  @@map("mods")
+}
+
+model App {
+  id            String   @id @default(uuid())
+  nome          String
+  versao        String?
+  descricao     String?
+  download_url  String
+  ativo         Boolean  @default(true)
+  criado_em     DateTime @default(now())
+
+  @@map("aplicativos")
+}
