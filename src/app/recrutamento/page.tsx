@@ -133,7 +133,7 @@ export default async function RecruitmentPage() {
                         <div className="flex items-center gap-3">
                             <Image src="/assets/imagens/whatsapp.png" alt="WhatsApp" width={24} height={24} />
                             <a href={config?.whatsapp || "#"} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-orange-600 transition-colors">
-                                {config?.whatsapp?.includes("wa.me") ? "Acessar Grupo/Contato" : (config?.whatsapp || "Não configurado")}
+                                {config?.whatsapp ? "Acessar Grupo" : "Não configurado"}
                             </a>
                         </div>
                     </div>
