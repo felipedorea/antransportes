@@ -1,0 +1,239 @@
+# 🚀 Guia de Deploy — Vercel + Supabase
+
+Guia completo para hospedar o site **FS Brothers Airlines** no **Vercel** com banco de dados **Supabase** (PostgreSQL).
+
+---
+
+## Pré-requisitos
+
+- Conta no [GitHub](https://github.com) (repositório do projeto já configurado)
+- Conta no [Vercel](https://vercel.com)
+- Conta no [Supabase](https://supabase.com)
+
+---
+
+## Passo 1 — Configurar o Supabase
+
+### 1.1 Criar o Projeto
+
+1. Acesse [supabase.com](https://supabase.com) e faça login.
+2. Clique em **"New Project"**.
+3. Preencha:
+   - **Name**: `fsbrothers` (ou o nome que preferir)
+   - **Database Password**: Anote essa senha! Você vai precisar dela.
+   - **Region**: Escolha a mais próxima (ex: `South America (São Paulo)`)
+4. Clique em **"Create new project"** e aguarde a inicialização (~2 min).
+
+### 1.2 Obter a Connection String
+
+1. No painel do Supabase, vá em **Settings** → **Database**.
+2. Na seção **"Connection string"**, selecione a aba **URI**.
+3. Copie a string de conexão. Ela será algo assim:
+
+```
+postgresql://postgres.[SEU-PROJECT-REF]:[SUA-SENHA]@aws-0-sa-east-1.pooler.supabase.com:6543/postgres
+```
+
+> [!IMPORTANT]
+> Substitua `[SUA-SENHA]` pela senha que você definiu ao criar o projeto.
+
+> [!TIP]
+> Use a porta **`6543`** (modo **Transaction** / pooler) para melhor compatibilidade com serverless (Vercel).
+> Se encontrar problemas de conexão, tente a porta `5432` (conexão direta).
+
+### 1.3 Adicionar `?pgbouncer=true` (Recomendado)
+
+Para evitar problemas de conexão em ambientes serverless, adicione `?pgbouncer=true` ao final da URL:
+
+```
+postgresql://postgres.[REF]:[SENHA]@aws-0-sa-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true
+```
+
+---
+
+## Passo 2 — Preparar o Repositório
+
+### 2.1 Garantir que o `build` gera o Prisma Client
+
+Abra o [package.json](file:///c:/Users/Felipe/Documents/GitHub/antransportes/package.json) e adicione o script `postinstall`:
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "postinstall": "prisma generate"
+  }
+}
+```
+
+> [!IMPORTANT]
+> O `postinstall` garante que o Prisma Client seja gerado automaticamente no Vercel durante o `npm install`.
+
+### 2.2 Criar o arquivo [.env.local](file:///c:/Users/Felipe/Documents/GitHub/antransportes/.env.local) (Opcional, apenas para testes locais)
+
+> [!CAUTION]
+> **Nunca** faça commit do [.env.local](file:///c:/Users/Felipe/Documents/GitHub/antransportes/.env.local) no Git. Ele contém credenciais sensíveis.
+
+```env
+DATABASE_URL="postgresql://postgres.[REF]:[SENHA]@aws-0-sa-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+JWT_SECRET="uma-chave-secreta-bem-longa-e-aleatoria-aqui"
+```
+
+### 2.3 Fazer Push do Código
+
+```bash
+git add .
+git commit -m "Preparar para deploy no Vercel"
+git push origin main
+```
+
+---
+
+## Passo 3 — Aplicar o Schema no Supabase
+
+Antes de fazer o deploy, você precisa criar as tabelas no banco do Supabase.
+
+### 3.1 Rodar o `prisma db push`
+
+No terminal local, execute:
+
+```bash
+set DATABASE_URL=postgresql://postgres.[REF]:[SENHA]@aws-0-sa-east-1.pooler.supabase.com:5432/postgres
+npx prisma db push
+```
+
+> [!NOTE]
+> Para o `db push`, use a porta **`5432`** (conexão direta), não a `6543`.
+> O `db push` precisa de uma conexão direta para aplicar alterações no schema.
+
+### 3.2 Rodar o Seed (Dados Iniciais)
+
+```bash
+set DATABASE_URL=postgresql://postgres.[REF]:[SENHA]@aws-0-sa-east-1.pooler.supabase.com:5432/postgres
+npx prisma db seed
+```
+
+Isso irá criar:
+- ✅ Usuário admin (`admin@fsbrothers.com.br` / senha: `admin`)
+- ✅ Pilotos de exemplo
+- ✅ Rotas de exemplo
+- ✅ Liveries e Apps de exemplo
+
+> [!WARNING]
+> A senha padrão do seed é `admin`. **Troque imediatamente** após o primeiro login em produção via o painel de Configurações.
+
+---
+
+## Passo 4 — Deploy no Vercel
+
+### 4.1 Importar o Projeto
+
+1. Acesse [vercel.com/new](https://vercel.com/new).
+2. Clique em **"Import Git Repository"**.
+3. Selecione o repositório `antransportes` do GitHub.
+4. Clique em **"Import"**.
+
+### 4.2 Configurar Variáveis de Ambiente
+
+Na tela de configuração do projeto, vá em **Environment Variables** e adicione:
+
+| Variável | Valor | Descrição |
+|:---|:---|:---|
+| `DATABASE_URL` | `postgresql://postgres.[REF]:[SENHA]@...pooler.supabase.com:6543/postgres?pgbouncer=true` | Conexão com o banco Supabase (usar porta 6543) |
+| `JWT_SECRET` | `gere-uma-string-aleatoria-com-32+-caracteres` | Chave secreta para tokens de autenticação |
+
+> [!TIP]
+> Para gerar um `JWT_SECRET` seguro, execute no terminal:
+> ```bash
+> node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+> ```
+
+### 4.3 Build Settings
+
+O Vercel deve detectar automaticamente o Next.js. Confirme que as configurações estão assim:
+
+| Campo | Valor |
+|:---|:---|
+| **Framework Preset** | Next.js |
+| **Build Command** | `next build` (padrão) |
+| **Output Directory** | `.next` (padrão) |
+| **Install Command** | `npm install` (padrão) |
+
+### 4.4 Deploy
+
+Clique em **"Deploy"** e aguarde. O processo leva cerca de 1–3 minutos.
+
+---
+
+## Passo 5 — Verificação Pós-Deploy
+
+### 5.1 Testar o Site
+
+1. Acesse a URL fornecida pelo Vercel (ex: `https://seu-projeto.vercel.app`)
+2. Verifique:
+   - ✅ Página inicial carrega com o vídeo de fundo
+   - ✅ Navbar com fontes brancas no topo, escurecendo ao rolar
+   - ✅ Seção de equipe exibe os pilotos na ordem correta
+   - ✅ Footer exibe links dinâmicos (WhatsApp, Discord, Instagram)
+
+### 5.2 Testar o Painel Admin
+
+1. Acesse `https://seu-projeto.vercel.app/admin/login`
+2. Faça login com `admin@fsbrothers.com.br` / `admin`
+3. Verifique:
+   - ✅ Sidebar fixa e occupando toda a altura
+   - ✅ Gerenciamento de Pilotos, Rotas, Liveries, Mods, Apps funcional
+   - ✅ Seção "Links & Redes" salva e atualiza os links nas páginas públicas
+
+---
+
+## Passo 6 — Domínio Personalizado (Opcional)
+
+1. No painel do Vercel, vá em **Settings** → **Domains**.
+2. Clique em **"Add Domain"**.
+3. Digite seu domínio (ex: `fsbrothers.com.br`).
+4. Siga as instruções para configurar os registros DNS:
+   - **Tipo A**: `76.76.21.21`
+   - **Tipo CNAME**: `cname.vercel-dns.com`
+5. Aguarde a propagação DNS (pode levar até 48h, normalmente 15–30 min).
+
+---
+
+## Troubleshooting
+
+### Erro: `PrismaClientInitializationError`
+- Verifique se a `DATABASE_URL` está correta nas variáveis de ambiente do Vercel.
+- Certifique-se de usar a porta `6543` com `?pgbouncer=true`.
+
+### Erro: `Cannot find module '.prisma/client'`
+- Confirme que o script `postinstall` está no [package.json](file:///c:/Users/Felipe/Documents/GitHub/antransportes/package.json).
+- Faça um redeploy no Vercel.
+
+### Erro: `connect ECONNREFUSED` ou timeout
+- Verifique se o IP do Vercel não está bloqueado no Supabase.
+- No Supabase, vá em **Settings** → **Database** → **Network** e garanta que "Allow all IPs" esteja habilitado (ou adicione os IPs do Vercel).
+
+### Build falha com erros de TypeScript
+- Execute `npm run build` localmente para identificar os erros antes do deploy.
+- Corrija os erros e faça push novamente.
+
+### Admin não consegue logar
+- Verifique se o seed foi executado (`npx prisma db seed`).
+- Confira se a `JWT_SECRET` está configurada no Vercel.
+
+---
+
+## Resumo das Variáveis de Ambiente
+
+| Variável | Obrigatória | Descrição |
+|:---|:---|:---|
+| `DATABASE_URL` | ✅ Sim | Conexão PostgreSQL do Supabase |
+| `JWT_SECRET` | ✅ Sim | Chave secreta para autenticação JWT |
+
+---
+
+> [!NOTE]
+> Após o deploy, qualquer push para a branch [main](file:///c:/Users/Felipe/Documents/GitHub/antransportes/prisma/seed.js#6-63) no GitHub fará um **redeploy automático** no Vercel.
