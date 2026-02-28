@@ -1,8 +1,11 @@
 import { ArrowRight, Plane, ShieldCheck, Star, Users, CheckCircle2, Send } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { prisma } from "@/lib/prisma";
 
-export default function RecruitmentPage() {
+export default async function RecruitmentPage() {
+    const config = await prisma.globalConfig.findUnique({ where: { id: "global" } });
+
     return (
         <div className="min-h-screen bg-slate-950 text-white">
             {/* Hero Section */}
@@ -31,7 +34,7 @@ export default function RecruitmentPage() {
                                 Abrir Formulário
                             </Link>
                             <Link
-                                href="https://discord.gg/kjKfRmSEBr"
+                                href={config?.discord || "#"}
                                 className="bg-white/5 hover:bg-white/10 text-white px-10 py-5 rounded-2xl font-black border border-white/10 transition-all text-center uppercase tracking-widest text-xs"
                             >
                                 Conversar no Discord
@@ -95,7 +98,7 @@ export default function RecruitmentPage() {
                                 </li>
                             </ul>
                             <div className="pt-8 border-t border-white/10">
-                                <p className="text-xs italic text-slate-500">Note: Todas as candidaturas são revisadas individualmente pela nossa diretoria.</p>
+                                <p className="text-xs italic text-slate-500">Nota: Todas as candidaturas são revisadas individualmente pela nossa diretoria.</p>
                             </div>
                         </div>
                         <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/20 rounded-full blur-[100px]" />
@@ -107,25 +110,29 @@ export default function RecruitmentPage() {
             <section id="form" className="py-24 px-6 bg-slate-50 text-slate-900">
                 <div className="max-w-4xl mx-auto text-center space-y-12">
                     <div className="space-y-4">
-                        <h2 className="text-4xl font-black uppercase tracking-tight text-slate-950">Pronto para a Devolagem?</h2>
+                        <h2 className="text-4xl font-black uppercase tracking-tight text-slate-950">Pronto para a Decolagem?</h2>
                         <p className="text-slate-500 max-w-xl mx-auto">
-                            Clique no botão abaixo para preencher nosso formulário oficial de recrutamento.
+                            Clique no botão abaixo para fazer a sua inscrição.
                         </p>
                     </div>
 
                     <a
-                        href="#"
+                        href={config?.formulario || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-4 bg-orange-600 text-white px-12 py-6 rounded-[2rem] font-black uppercase tracking-widest shadow-2xl shadow-orange-600/20 hover:bg-orange-700 transition-all active:scale-95"
                     >
-                        Acessar Formulário Google
+                        Acessar página de inscrição
                         <Send className="w-5 h-5" />
                     </a>
 
                     <div className="pt-12 flex flex-col items-center gap-4">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Ou através do</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Entre em nosso grupo do whatsapp</span>
                         <div className="flex items-center gap-3">
-                            <Image src="/assets/imagens/whatsapp-b.png" alt="WhatsApp" width={24} height={24} />
-                            <span className="font-bold text-slate-900">+55 (00) 00000-0000</span>
+                            <Image src="/assets/imagens/whatsapp.png" alt="WhatsApp" width={24} height={24} />
+                            <a href={config?.whatsapp || "#"} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-orange-600 transition-colors">
+                                {config?.whatsapp?.includes("wa.me") ? "Acessar Grupo/Contato" : (config?.whatsapp || "Não configurado")}
+                            </a>
                         </div>
                     </div>
                 </div>

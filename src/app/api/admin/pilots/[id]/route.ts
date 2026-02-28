@@ -9,7 +9,10 @@ export async function PUT(request: Request, context: { params: Promise<{ id: str
 
         const params = await context.params;
         const body = await request.json();
-        const updated = await prisma.pilot.update({ where: { id: params.id }, data: body });
+        const data = { ...body };
+        if (data.ordem !== undefined) data.ordem = parseInt(data.ordem);
+
+        const updated = await prisma.pilot.update({ where: { id: params.id }, data });
         return NextResponse.json(updated);
     } catch (error) {
         return NextResponse.json({ error: "Error updating" }, { status: 500 });

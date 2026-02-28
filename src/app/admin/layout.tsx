@@ -64,22 +64,23 @@ export default function AdminLayout({
     if (isLoginPage) return <>{children}</>;
 
     return (
-        <div className="flex min-h-screen bg-[#fafafa]">
+        <div className="min-h-screen bg-[#fafafa]">
             <AdminSidebar />
-            <div className="flex-1 flex flex-col">
+            <div className="pl-64 flex flex-col min-h-screen">
                 {/* Top Navbar */}
                 <header className="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-end sticky top-0 z-20">
                     <div className="flex items-center gap-3">
                         <div className="text-right">
                             <p className="text-sm font-bold text-slate-900">{profile?.nome || "Carregando..."}</p>
-                            <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Master Admin</p>
+                            <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Administrador</p>
                         </div>
                         <div className="w-10 h-10 bg-slate-100 rounded-full border border-slate-200 flex items-center justify-center overflow-hidden relative">
-                            {profile?.foto_url ? (
-                                <Image src={profile.foto_url} alt="Avatar" fill className="object-cover" />
-                            ) : (
-                                <User className="w-5 h-5 text-slate-500" />
-                            )}
+                            <Image
+                                src={(profile?.foto_url && (profile.foto_url.startsWith("/") || (function () { try { new URL(profile.foto_url); return true } catch { return false } })())) ? profile.foto_url : DEFAULT_AVATAR}
+                                alt="Avatar"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </header>

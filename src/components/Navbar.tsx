@@ -41,7 +41,10 @@ export default function Navbar() {
                     <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
                         <Plane className="text-white w-6 h-6 rotate-45" />
                     </div>
-                    <span className={cn("text-xl font-bold tracking-tight", scrolled ? "text-slate-900" : "text-slate-900")}>
+                    <span className={cn(
+                        "text-xl font-bold tracking-tight transition-colors",
+                        (scrolled || pathname !== "/") ? "text-slate-900" : "text-white"
+                    )}>
                         FS Brothers
                     </span>
                 </Link>
@@ -50,13 +53,17 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => {
                         const isActive = pathname === link.href;
+                        const isInitialHome = !scrolled && pathname === "/";
+
                         return (
                             <Link
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
                                     "text-sm font-semibold transition-all hover:text-blue-600 relative py-1",
-                                    isActive ? "text-blue-600" : "text-slate-600"
+                                    isActive
+                                        ? "text-blue-600"
+                                        : (isInitialHome ? "text-white/90 hover:text-white" : "text-slate-600")
                                 )}
                             >
                                 {link.name}
@@ -78,7 +85,13 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="md:hidden text-slate-900" onClick={() => setIsOpen(!isOpen)}>
+                <button
+                    className={cn(
+                        "md:hidden transition-colors",
+                        (scrolled || pathname !== "/") ? "text-slate-900" : "text-white"
+                    )}
+                    onClick={() => setIsOpen(!isOpen)}
+                >
                     {isOpen ? <X /> : <Menu />}
                 </button>
             </div>

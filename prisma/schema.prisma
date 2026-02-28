@@ -20,66 +20,79 @@ model AdminUser {
 }
 
 model Route {
-  id             String   @id @default(uuid())
-  numero_voo     String
-  origem         String
-  destino        String
-  distancia_nm   Int
-  duracao_media  String
-  aeronave       String
-  simbrief_link  String?
-  ativo          Boolean  @default(true)
-  criado_em      DateTime @default(now())
+  id            String   @id @default(uuid())
+  numero_voo    String
+  origem        String
+  destino       String
+  distancia_nm  Int
+  duracao_media String
+  aeronave      String
+  simbrief_link String?
+  ativo         Boolean  @default(true)
+  criado_em     DateTime @default(now())
 
   @@map("rotas")
 }
 
 model Pilot {
-  id         String   @id @default(uuid())
-  nome       String
-  cargo      String
-  descricao  String?
-  foto_url   String?
-  biografia  String?
-  ativo      Boolean  @default(true)
-  criado_em  DateTime @default(now())
+  id        String   @id @default(uuid())
+  nome      String
+  cargo     String
+  descricao String?
+  foto_url  String?
+  biografia String?
+  ativo     Boolean  @default(true)
+  ordem     Int      @default(0)
+  criado_em DateTime @default(now())
 
   @@map("pilotos")
 }
 
 model Livery {
-  id               String   @id @default(uuid())
-  nome             String
-  aeronave         String
-  descricao        String?
-  pintura_url      String?
-  download_url     String
-  ativo            Boolean  @default(true)
-  criado_em        DateTime @default(now())
+  id           String   @id @default(uuid())
+  nome         String
+  aeronave     String
+  descricao    String?
+  pintura_url  String?
+  download_url String
+  ativo        Boolean  @default(true)
+  criado_em    DateTime @default(now())
 
   @@map("liveries")
 }
 
 model Mod {
-  id            String   @id @default(uuid())
-  nome          String
-  descricao     String?
-  versao        String?
-  download_url  String
-  ativo         Boolean  @default(true)
-  criado_em     DateTime @default(now())
+  id           String   @id @default(uuid())
+  nome         String
+  descricao    String?
+  versao       String?
+  download_url String
+  ativo        Boolean  @default(true)
+  criado_em    DateTime @default(now())
 
   @@map("mods")
 }
 
 model App {
-  id            String   @id @default(uuid())
-  nome          String
-  versao        String?
-  descricao     String?
-  download_url  String
-  ativo         Boolean  @default(true)
-  criado_em     DateTime @default(now())
+  id           String   @id @default(uuid())
+  nome         String
+  versao       String?
+  descricao    String?
+  download_url String
+  ativo        Boolean  @default(true)
+  criado_em    DateTime @default(now())
 
   @@map("aplicativos")
+}
+
+model GlobalConfig {
+  id         String   @id @default("global")
+  whatsapp   String?
+  instagram  String?
+  facebook   String?
+  discord    String?
+  formulario String?
+  updated_at DateTime @updatedAt
+
+  @@map("config_global")
 }

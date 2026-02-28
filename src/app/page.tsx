@@ -8,12 +8,13 @@ async function getCrew() {
   return await prisma.pilot.findMany({
     where: { ativo: true },
     take: 3,
-    orderBy: { criado_em: "asc" }
+    orderBy: { ordem: "asc" }
   });
 }
 
 export default async function HomePage() {
   const crew = await getCrew();
+  const config = await prisma.globalConfig.findUnique({ where: { id: "global" } });
 
   return (
     <div className="flex flex-col w-full">
@@ -181,7 +182,7 @@ export default async function HomePage() {
               Participe da nossa comunidade apaixonada. Tire dúvidas, compartilhe experiências de voo e conecte-se com milhares de todo o mundo.
             </p>
             <Link
-              href="https://discord.gg/kjKfRmSEBr"
+              href={config?.discord || "#"}
               className="inline-flex items-center gap-4 bg-white text-blue-600 px-10 py-5 rounded-2xl font-black transition-all hover:shadow-2xl hover:bg-slate-50 active:scale-95"
             >
               Entrar no Servidor

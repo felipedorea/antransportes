@@ -21,7 +21,8 @@ const menuItems = [
     { name: "Liveries", icon: Plane, href: "/admin/liveries" },
     { name: "Aplicativos", icon: AppWindow, href: "/admin/aplicativos" },
     { name: "Usuários", icon: Users, href: "/admin/usuarios" },
-    { name: "Configurações", icon: Settings, href: "/admin/configuracoes" },
+    { name: "Links & Redes", icon: Settings, href: "/admin/configuracoes-gerais" },
+    { name: "Minha Conta", icon: Settings, href: "/admin/configuracoes" },
 ];
 
 export default function AdminSidebar() {
@@ -31,8 +32,8 @@ export default function AdminSidebar() {
     if (pathname === "/admin/login") return null;
 
     return (
-        <aside className="w-64 bg-slate-950 border-r border-slate-900 flex flex-col h-full sticky top-0 overflow-y-auto">
-            <div className="p-6">
+        <aside className="fixed inset-y-0 left-0 w-64 bg-slate-950 border-r border-slate-900 flex flex-col z-30">
+            <div className="flex-1 overflow-y-auto p-6">
                 <div className="flex items-center gap-3 mb-8 px-2">
                     <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center font-bold text-white shadow-lg shadow-orange-500/20">
                         FS

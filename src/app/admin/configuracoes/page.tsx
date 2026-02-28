@@ -8,6 +8,16 @@ import { useRouter } from "next/navigation";
 
 const DEFAULT_AVATAR = "/assets/default-pilot.png";
 
+const isValidUrl = (url: string) => {
+    try {
+        if (!url) return false;
+        new URL(url);
+        return true;
+    } catch {
+        return false;
+    }
+};
+
 export default function SettingsPage() {
     const router = useRouter();
     const [profile, setProfile] = useState({ nome: "", email: "", foto_url: "" });
@@ -144,7 +154,12 @@ export default function SettingsPage() {
                     {/* Avatar */}
                     <div className="flex items-center gap-6">
                         <div className="w-24 h-24 rounded-2xl overflow-hidden relative bg-slate-100 border-2 border-slate-50 shrink-0">
-                            <Image src={previewUrl || profile.foto_url || DEFAULT_AVATAR} alt="Avatar" fill className="object-cover" />
+                            <Image
+                                src={(profile.foto_url && (profile.foto_url.startsWith("/") || isValidUrl(profile.foto_url))) ? profile.foto_url : DEFAULT_AVATAR}
+                                alt="Avatar"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                         <div className="space-y-3 flex-1">
                             <div className="flex gap-2">
@@ -161,7 +176,15 @@ export default function SettingsPage() {
                                 )}
                             </div>
                             {imageMode === "url" ? (
-                                <input value={profile.foto_url} onChange={e => { setProfile({ ...profile, foto_url: e.target.value }); setPreviewUrl(e.target.value || null); }} type="url" placeholder="Cole a URL da imagem aqui" className="w-full bg-slate-50 border border-slate-200 p-2.5 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20" />
+                                <input value={profile.foto_url} onChange={e => {
+                                    const val = e.target.value;
+                                    setProfile({ ...profile, foto_url: val });
+                                    if (!val) {
+                                        setPreviewUrl(null);
+                                    } else {
+                                        try { new URL(val); setPreviewUrl(val); } catch { /* ignore invalid during typing */ }
+                                    }
+                                }} type="url" placeholder="Cole a URL da imagem aqui" className="w-full bg-slate-50 border border-slate-200 p-2.5 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20" />
                             ) : (
                                 <div onClick={() => fileInputRef.current?.click()} className="cursor-pointer border-2 border-dashed border-slate-200 rounded-xl p-4 text-center hover:border-orange-400 hover:bg-orange-50/30 transition-all">
                                     <p className="text-xs text-slate-400 font-medium">{uploading ? "Enviando..." : "Clique para selecionar"}</p>

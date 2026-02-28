@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
     Map,
     Plane,
@@ -59,10 +60,10 @@ export default async function AdminDashboard() {
                         { name: "Aplicativos", href: "/admin/aplicativos", icon: AppWindow, color: "text-purple-500", bg: "bg-purple-50 hover:bg-purple-100" },
                         { name: "Tripulação", href: "/admin/usuarios", icon: UserPlus, color: "text-green-500", bg: "bg-green-50 hover:bg-green-100" },
                     ].map(link => (
-                        <a key={link.name} href={link.href} className={`cursor-pointer flex flex-col items-center gap-3 p-6 rounded-2xl transition-all ${link.bg}`}>
+                        <Link key={link.name} href={link.href} className={`cursor-pointer flex flex-col items-center gap-3 p-6 rounded-2xl transition-all ${link.bg}`}>
                             <link.icon className={`w-8 h-8 ${link.color}`} />
                             <span className="text-sm font-bold text-slate-700">{link.name}</span>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>

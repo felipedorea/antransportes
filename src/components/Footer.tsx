@@ -2,10 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Facebook, Youtube, Github, Mail, Globe, Plane } from "lucide-react";
+import { Facebook, Youtube, Github, Mail, Globe, Plane, Instagram } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
     const pathname = usePathname();
+    const [config, setConfig] = useState<any>(null);
+
+    useEffect(() => {
+        if (pathname.startsWith("/admin")) return;
+        fetch("/api/admin/config")
+            .then(res => res.json())
+            .then(data => { if (data && !data.error) setConfig(data); })
+            .catch(() => { });
+    }, [pathname]);
+
     if (pathname.startsWith("/admin")) return null;
 
     return (
@@ -22,14 +33,14 @@ export default function Footer() {
                         A FS Brothers é uma comunidade dedicada ao simulador de voo, unindo pilotos virtuais através de rotas realistas e camaradagem.
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all border border-slate-800">
+                        <a href={config?.whatsapp || "#"} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-green-600 transition-all border border-slate-800" title="WhatsApp">
                             <Globe className="w-4 h-4" />
                         </a>
-                        <a href="#" className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-red-600 transition-all border border-slate-800">
-                            <Youtube className="w-4 h-4" />
+                        <a href={config?.instagram || "#"} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-pink-600 transition-all border border-slate-800" title="Instagram">
+                            <Instagram className="w-4 h-4" />
                         </a>
-                        <a href="#" className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-blue-400 transition-all border border-slate-800">
-                            <Mail className="w-4 h-4" />
+                        <a href={config?.facebook || "#"} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all border border-slate-800" title="Facebook">
+                            <Facebook className="w-4 h-4" />
                         </a>
                     </div>
                 </div>
@@ -40,7 +51,8 @@ export default function Footer() {
                         <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
                         <li><Link href="/extras" className="hover:text-white transition-colors">Extras</Link></li>
                         <li><Link href="/recrutamento" className="hover:text-white transition-colors">Recrutamento</Link></li>
-                        <li><Link href="https://discord.gg/kjKfRmSEBr" className="hover:text-white transition-colors">Discord</Link></li>
+                        <li><Link href={config?.discord || "#"} target="_blank" className="hover:text-white transition-colors">Discord</Link></li>
+                        <li><a href={config?.whatsapp || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a></li>
                     </ul>
                 </div>
 
