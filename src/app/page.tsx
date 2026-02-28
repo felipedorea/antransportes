@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { motion } from "framer-motion";
 import { Plane, Users, Shield, Target, Award, Heart, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";

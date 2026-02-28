@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { Plane, Download, Search, Info, ArrowRight, ShieldCheck, Box } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import Image from "next/image";

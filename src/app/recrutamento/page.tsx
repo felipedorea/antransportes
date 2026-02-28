@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { ArrowRight, Plane, ShieldCheck, Star, Users, CheckCircle2, Send } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
