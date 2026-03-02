@@ -4,23 +4,23 @@ import Link from "next/link";
 const faqs = [
     {
         q: "Como faço para entrar na FS Brothers?",
-        a: "Para entrar na nossa companhia, você deve acessar a página de Recrutamento, preencher o formulário oficial e aguardar o contato da nossa equipe via Discord ou E-mail."
+        a: "Para entrar na nossa companhia, você deve acessar a página de Recrutamento, seguir o passo a passo e aguardar o resultado da análise do pedido."
     },
     {
         q: "Quais simuladores são aceitos?",
-        a: "Atualmente aceitamos Microsoft Flight Simulator 2020 (MSFS), X-Plane 11/12 e Prepar3D (v4/v5)."
+        a: "Atualmente aceitamos todos os simuladores em nossa comunidade no whatsapp/discord, porém para ingressar ao neswky apenas Microsoft Flight Simulator 2020/2024, X-Plane 11/12."
     },
     {
         q: "É obrigatório voar na IVAO ou VATSIM?",
-        a: "Não é obrigatório, mas incentivamos fortemente o uso dessas redes para aumentar o realismo da simulação. Realizamos eventos coordenados nessas plataformas regularmente."
+        a: "Não é obrigatório, fica conforme vontade do piloto."
     },
     {
         q: "Eu preciso de um software de rastreio (tracker)?",
-        a: "Sim, utilizamos ferramentas oficiais para registro de horas e performance. Você pode baixar nosso tracker na seção de Extras."
+        a: "Não, apenas utilizamos o newsky para contagem de horas e registro de voos."
     },
     {
         q: "Como posso sugerir novas rotas ou liveries?",
-        a: "Todas as sugestões devem ser enviadas no canal específico do nosso servidor do Discord, onde a comunidade vota e a diretoria avalia a viabilidade técnica."
+        a: "Todas as sugestões devem ser enviadas no canal específico do nosso servidor do Discord e grupo do whatsapp onde a comunidade vota e a diretoria avalia a viabilidade da produção."
     },
     {
         q: "A FS Brothers é uma empresa real?",
