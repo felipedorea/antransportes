@@ -62,7 +62,7 @@ export default async function RecruitmentPage() {
                             {[
                                 { title: "Realismo Operacional", desc: "Planos de voo via SimBrief e regras de aviação civil.", icon: ShieldCheck },
                                 { title: "Crescimento de Carreira", desc: "Sistema de ranking baseado em competência e comprometimento.", icon: Star },
-                                { title: "Eventos Exclusivos", desc: "Fly-ins coordenados com controle IVAO e VATSIM.", icon: Users },
+                                { title: "Comunidade Ativa", desc: "Pilotos conectados compartilhando experiências, voos e conhecimentos de aviação.", icon: Users },
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-6 p-6 rounded-3xl border border-slate-100 hover:border-orange-200 transition-all group">
                                     <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -84,11 +84,7 @@ export default async function RecruitmentPage() {
                             <ul className="space-y-4 text-slate-400">
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-                                    Possuir o simulador (MSFS, X-Plane ou P3D)
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-                                    Idade mínima de 14 anos (recomendado)
+                                    Possuir os simuladores suportados pelo Newsky.
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
