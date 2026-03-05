@@ -19,7 +19,7 @@ export default async function RecruitmentPage() {
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="max-w-2xl space-y-8">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 text-blue-400 text-[10px] font-black uppercase tracking-widest border border-blue-500/20">
-                            Carreiras FS Brothers
+                            Carreira FS Brothers
                         </div>
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-tight">
                             Sua jornada <br />
